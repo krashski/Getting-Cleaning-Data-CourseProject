@@ -13,6 +13,7 @@ The project requires the following submissions:
 The R script called run_analysis.R does the following:
 
 0. Downloads the data set to the working directory, unzips the file, and records when the file was downloaded 
+
 1. Merges the training and the test sets to create one data set
 	* read and apply variable names to the training and test data files
 	* combines subject, activity, and data files for training and test subjects into one master file
