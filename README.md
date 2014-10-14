@@ -31,7 +31,7 @@ The R script called run_analysis.R does the following:
 	- create the tidy data set by aggregating the data set by Activity and Subject
 	- add the descriptive names to the Activity variable in the tidy data set
 	- to make the tidy data set easier to read, sort by Activity and then by Subject
-	- save the tidy data set to a text file "tidy_data.txt"
+	- save the tidy data set to a text file called "tidy_data.txt"
 	
 To read the tidy data set back into R:
 ```
