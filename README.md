@@ -24,8 +24,8 @@ The R script called run_analysis.R does the following:
 	- read in the list of activity names and labels
 	- use the list as a lookup table to convert the Activity variable to a factor with descriptive names
 4. Appropriately labels the data set with descriptive variable names
-	- remove extra '.' characters added automatically in Step 1 because "-" and "()" in the original data are not valid characters for variable names in R
-	- make the variable names human readable
+	- remove extra '.' characters added automatically in Step 1 (because "-" and "()" in the original data are not valid characters for variable names in R)
+	- make the variable names human readable (see CodeBook.md for more information)
 	- apply the new variable names to the dataset 
 5. From the data set in Step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
 	- create the tidy data set by aggregating the data frame
