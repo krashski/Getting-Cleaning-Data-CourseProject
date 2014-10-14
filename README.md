@@ -12,23 +12,22 @@ The project requires the following submissions:
 
 The R script called run_analysis.R does the following:
 
-Step 0. Downloads the data set to the working directory, unzips the file, and records when the file was downloaded 
-Step 1. Merges the training and the test sets to create one data set
+1. Merges the training and the test sets to create one data set
 	* read and apply variable names to the training and test data files
 	* combines subject, activity, and data files for training and test subjects into one master file
-Step 2. Extracts only the measurements on the mean and standard deviation for each measurement
+2. Extracts only the measurements on the mean and standard deviation for each measurement
 	* use *grep* to create a list of variable names with "mean" or "std" for **inclusion**
 	* use *grep* to create a second list of variable names with "meanFreq" for **exclusion**
 	* use these two lists to subset the data
 	* include the Subject and Activity variables in the new dataset
-Step 3. Uses descriptive activity names to name the activities in the data set
+3. Uses descriptive activity names to name the activities in the data set
 	* read in the list of activity names and labels
 	* use the list as a lookup table to convert the Activity variable to a factor with descriptive names
-Step 4. Appropriately labels the data set with descriptive variable names
+4. Appropriately labels the data set with descriptive variable names
 	* remove extra '.' characters added automatically by R in Step 1
 	* make the variable names human readable
 	* apply the new variable names to the dataset 
-Step 5. From the data set in Step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
+5. From the data set in Step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
 	* create the tidy data set by aggregating the data frame
 	* add the descriptive names to the Activity variable in the tidy data set
 	* to make the tidy data set easier to read, sort by Activity and then by Subject
