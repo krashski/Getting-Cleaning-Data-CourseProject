@@ -28,7 +28,7 @@ The R script called run_analysis.R does the following:
 	- make the variable names human readable (see CodeBook.md for more information)
 	- apply the new variable names to the dataset 
 5. From the data set in Step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
-	- create the tidy dataset by using the 'reshape2' package to compute the mean for each variable across all activity/subject combinations
+	- create the tidy dataset by using the *reshape2* package to compute the mean for each variable across all activity/subject combinations
 	- save the tidy data set to a text file called "tidy_data.txt"
 	
 To read the tidy data set back into R:
