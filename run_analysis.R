@@ -100,7 +100,6 @@ rm(list="keep", "drop", "df.all")
 ########
 
 # get activity names to use as a lookup table
-# we'll need this list again in Step 5, so don't remove it
 a.labels <- read.table(paste(path,'activity_labels.txt', sep = ''), 
                      header = FALSE, col.names = c("number", "name"),
                      stringsAsFactors = FALSE)
@@ -108,6 +107,9 @@ a.labels <- read.table(paste(path,'activity_labels.txt', sep = ''),
 # create a factor to replace activity numbers with descriptive names
 df$Activity <- factor(df$Activity, levels = a.labels$number,
                        labels = a.labels$name)
+
+# cleanup
+rm("a.labels")
 
 ######## 
 ## 4. Appropriately label the data set with descriptive variable names. 
