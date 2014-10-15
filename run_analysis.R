@@ -1,6 +1,8 @@
 # Getting and Cleaning Data
 # Course Project
 
+# Step 5 of the script requires the 'reshape2' package.
+
 ######## 
 ## 0. Get the data.
 ########
@@ -145,18 +147,11 @@ rm(list=c("oldval", "newval", "list", "i"))
 # data set with the average of each variable for each activity and each subject.  
 ########
 
-# create the tidy dataset by aggregating the data frame
-df.tidy <- aggregate.data.frame(df[3:68], 
-                                by = list(Activity = as.integer(df$Activity), 
-                                          Subject = df$Subject), mean)
-
-# add descriptive names to the activity variable in the tidy data set
-df.tidy$Activity <- factor(df.tidy$Activity, levels = a.labels$number,
-                      labels = a.labels$name)
-
-# sort the tidy data set by activity, then by subject
-# to make the data set easier to read
-df.tidy <- df.tidy[order(df.tidy$Activity, df.tidy$Subject), ]
+# create the tidy dataset using the 'reshape2' package to compute the mean for each variable
+# across all activity/subject combinations
+library(reshape2)
+df.tidy <- melt(df, id = c("Activity", "Subject"))
+df.tidy <- dcast(df.tidy, Activity + Subject ~ variable, mean)
 
 # save the tidy data set to a text file
 write.table(df.tidy, "tidy_data.txt", row.name = FALSE)
