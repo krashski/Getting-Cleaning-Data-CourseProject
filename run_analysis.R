@@ -155,9 +155,3 @@ df.tidy <- dcast(df.tidy, Activity + Subject ~ variable, mean)
 
 # save the tidy data set to a text file
 write.table(df.tidy, "tidy_data.txt", row.name = FALSE)
-
-
-
-
-    
-
