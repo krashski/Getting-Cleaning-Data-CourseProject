@@ -112,12 +112,12 @@ For more information about this dataset contact: activityrecognition@smartlab.ws
 
 ### Data Cleaning and Transformation
 
-A subset of 66 time and frequency domain variables were selected for further analysis. These variables consisted of the measurements on the mean and standard deviation for each measurement, as identified by "mean" or "std" in the variable name. **Note that variables with "meanFreq" in the name were excluded from this list, as these variables are the weighted average of the frequency components to obtain a mean frequency, and do not have a corresponding standard deviation variable.**
+1. A subset of 66 time and frequency domain variables were selected for further analysis. These variables consisted of the measurements on the mean and standard deviation for each measurement, as identified by "mean" or "std" in the variable name. **Note that variables with "meanFreq" in the name were excluded from this list, as these variables are the weighted average of the frequency components to obtain a mean frequency and do not have a corresponding standard deviation variable.**
 
-Descriptive activity names were added to the "activity" variable based on the information provided in the 'activity_labels.txt' file:
+2. Descriptive activity names were added to the "activity" variable based on the information provided in the 'activity_labels.txt' file:
 
 Class Label  | Activity Name
-------------- | -------------
+------------ | -------------
 1 | WALKING
 2 | WALKING_UPSTAIRS
 3 | WALKING_DOWNSTAIRS
@@ -125,6 +125,74 @@ Class Label  | Activity Name
 5 | STANDING
 6 | LAYING
 
+3. The data set was labeled with descriptive variable names in order to make the variable names human readable. Characters that are not valid for variable names in R, such as '-' and '()', were replaced with a period '.'.
 
 
-
+Original Variable Name | New Variable Name
+---------------------- | -----------------
+tBodyAcc-mean()-X | TimeBodyAcceleration.mean.X
+tBodyAcc-mean()-Y | TimeBodyAcceleration.mean.Y
+tBodyAcc-mean()-Z | TimeBodyAcceleration.mean.Z
+tBodyAcc-std()-X | TimeBodyAcceleration.std.X
+tBodyAcc-std()-Y | TimeBodyAcceleration.std.Y
+tBodyAcc-std()-Z | TimeBodyAcceleration.std.Z
+tGravityAcc-mean()-X | TimeGravityAcceleration.mean.X
+tGravityAcc-mean()-Y | TimeGravityAcceleration.mean.Y
+tGravityAcc-mean()-Z | TimeGravityAcceleration.mean.Z
+tGravityAcc-std()-X | TimeGravityAcceleration.std.X
+tGravityAcc-std()-Y | TimeGravityAcceleration.std.Y
+tGravityAcc-std()-Z | TimeGravityAcceleration.std.Z
+tBodyAccJerk-mean()-X | TimeBodyAccelerationJerk.mean.X
+tBodyAccJerk-mean()-Y | TimeBodyAccelerationJerk.mean.Y
+tBodyAccJerk-mean()-Z | TimeBodyAccelerationJerk.mean.Z
+tBodyAccJerk-std()-X | TimeBodyAccelerationJerk.std.X
+tBodyAccJerk-std()-Y | TimeBodyAccelerationJerk.std.Y
+tBodyAccJerk-std()-Z | TimeBodyAccelerationJerk.std.Z
+tBodyGyro-mean()-X | TimeBodyGyroscope.mean.X
+tBodyGyro-mean()-Y | TimeBodyGyroscope.mean.Y
+tBodyGyro-mean()-Z | TimeBodyGyroscope.mean.Z
+tBodyGyro-std()-X | TimeBodyGyroscope.std.X
+tBodyGyro-std()-Y | TimeBodyGyroscope.std.Y
+tBodyGyro-std()-Z | TimeBodyGyroscope.std.Z
+tBodyGyroJerk-mean()-X | TimeBodyGyroscopeJerk.mean.X
+tBodyGyroJerk-mean()-Y | TimeBodyGyroscopeJerk.mean.Y
+tBodyGyroJerk-mean()-Z | TimeBodyGyroscopeJerk.mean.Z
+tBodyGyroJerk-std()-X | TimeBodyGyroscopeJerk.std.X
+tBodyGyroJerk-std()-Y | TimeBodyGyroscopeJerk.std.Y
+tBodyGyroJerk-std()-Z | TimeBodyGyroscopeJerk.std.Z
+tBodyAccMag-mean() | TimeBodyAccelerationMagnitude.mean
+tBodyAccMag-std() | TimeBodyAccelerationMagnitude.std
+tGravityAccMag-mean() | TimeGravityAccelerationMagnitude.mean
+tGravityAccMag-std() | TimeGravityAccelerationMagnitude.std
+tBodyAccJerkMag-mean() | TimeBodyAccelerationJerkMagnitude.mean
+tBodyAccJerkMag-std() | TimeBodyAccelerationJerkMagnitude.std
+tBodyGyroMag-mean() | TimeBodyGyroscopeMagnitude.mean
+tBodyGyroMag-std() | TimeBodyGyroscopeMagnitude.std
+tBodyGyroJerkMag-mean() | TimeBodyGyroscopeJerkMagnitude.mean
+tBodyGyroJerkMag-std() | TimeBodyGyroscopeJerkMagnitude.std
+fBodyAcc-mean()-X | FrequencyBodyAcceleration.mean.X
+fBodyAcc-mean()-Y | FrequencyBodyAcceleration.mean.Y
+fBodyAcc-mean()-Z | FrequencyBodyAcceleration.mean.Z
+fBodyAcc-std()-X | FrequencyBodyAcceleration.std.X
+fBodyAcc-std()-Y | FrequencyBodyAcceleration.std.Y
+fBodyAcc-std()-Z | FrequencyBodyAcceleration.std.Z
+fBodyAccJerk-mean()-X | FrequencyBodyAccelerationJerk.mean.X
+fBodyAccJerk-mean()-Y | FrequencyBodyAccelerationJerk.mean.Y
+fBodyAccJerk-mean()-Z | FrequencyBodyAccelerationJerk.mean.Z
+fBodyAccJerk-std()-X | FrequencyBodyAccelerationJerk.std.X
+fBodyAccJerk-std()-Y | FrequencyBodyAccelerationJerk.std.Y
+fBodyAccJerk-std()-Z | FrequencyBodyAccelerationJerk.std.Z
+fBodyGyro-mean()-X | FrequencyBodyGyroscope.mean.X
+fBodyGyro-mean()-Y | FrequencyBodyGyroscope.mean.Y
+fBodyGyro-mean()-Z | FrequencyBodyGyroscope.mean.Z
+fBodyGyro-std()-X | FrequencyBodyGyroscope.std.X
+fBodyGyro-std()-Y | FrequencyBodyGyroscope.std.Y
+fBodyGyro-std()-Z | FrequencyBodyGyroscope.std.Z
+fBodyAccMag-mean() | FrequencyBodyAccelerationMagnitude.mean
+fBodyAccMag-std() | FrequencyBodyAccelerationMagnitude.std
+fBodyBodyAccJerkMag-mean() | FrequencyBodyAccelerationJerkMagnitude.mean
+fBodyBodyAccJerkMag-std() | FrequencyBodyAccelerationJerkMagnitude.std
+fBodyBodyGyroMag-mean() | FrequencyBodyGyroscopeMagnitude.mean
+fBodyBodyGyroMag-std() | FrequencyBodyGyroscopeMagnitude.std
+fBodyBodyGyroJerkMag-mean() | FrequencyBodyGyroscopeJerkMagnitude.mean
+fBodyBodyGyroJerkMag-std() | FrequencyBodyGyroscopeJerkMagnitude.std
