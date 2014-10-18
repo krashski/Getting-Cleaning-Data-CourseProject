@@ -129,11 +129,11 @@ Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012
 
 #### Subset
 
-A subset of 66 time and frequency domain variables were selected for further analysis. These variables consist of the measurements on the mean and standard deviation for each measurement, as identified by "mean" or "std" in the variable name. **Note that variables with "meanFreq" in the name were excluded from this list, as these variables are the weighted average of the frequency components to obtain a mean frequency and do not have a corresponding standard deviation variable.**
+A subset of 66 time and frequency domain variables were selected for further analysis. These variables consist of the measurements on the mean and standard deviation for each measurement, as identified by 'mean' or 'std' in the variable name. **Note that variables with 'meanFreq' in the name were excluded from this list, as these variables are the weighted average of the frequency components to obtain a mean frequency and do not have a corresponding standard deviation variable.**
 
 #### Activity Names
 
-Descriptive activity names were added to the "activity" variable based on the information provided in the 'activity_labels.txt' file:
+Descriptive activity names were added to the 'activity' variable based on the information provided in the 'activity_labels.txt' file:
 
 Class Label  | Activity Name
 ------------ | -------------
@@ -148,12 +148,12 @@ Class Label  | Activity Name
 
 The data set was labeled with descriptive variable names in order to make the variable names human readable. Specifically:
 
-- "BodyBody" was replaced with "Body" for six frequency domain variables (this looks like an error in the original file)
-- "Acceleration" was substituted for "Acc"
-- "Gyroscope" was substituted for "Gyro" 
-- "Magnitude" was substituted for "Mag" 
-- "Time" was added to the beginning of variable starting with "t" to indicate time domain variables
-- "Frequency" was added to the beginning of variable starting with "f" to indicate frequency domain variables
+- 'BodyBody' was replaced with 'Body' for six frequency domain variables (this looks like an error in the original file)
+- 'Acceleration' was substituted for 'Acc'
+- 'Gyroscope' was substituted for 'Gyro' 
+- 'Magnitude' was substituted for 'Mag' 
+- 'Time' was added to the beginning of variable starting with 't' to indicate time domain variables
+- 'Frequency' was added to the beginning of variable starting with 'f' to indicate frequency domain variables
 
 Characters that are not valid for variable names in R such as '-' and '()' were replaced with a single period '.'.
 
