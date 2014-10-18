@@ -155,7 +155,7 @@ The data set was labeled with descriptive variable names in order to make the va
 - 'Time' was added to the beginning of variable starting with 't' to indicate time domain variables
 - 'Frequency' was added to the beginning of variable starting with 'f' to indicate frequency domain variables
 
-Characters that are not valid for variable names in R such as '-' and '()' were replaced with a single period '.'.
+Characters that are not valid for variable names in R such as '-' and '()-' were replaced with a single period '.'.
 
 The original and new variable names are as follows:
 
