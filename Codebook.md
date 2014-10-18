@@ -114,7 +114,12 @@ For more information about this dataset contact: activityrecognition@smartlab.ws
 
 A subset of 66 time and frequency domain variables were selected for further analysis. These variables consisted of the measurements on the mean and standard deviation for each measurement, as identified by "mean" or "std" in the variable name. **Note that variables with "meanFreq" in the name were excluded from this list, as these variables are the weighted average of the frequency components to obtain a mean frequency, and do not have a corresponding standard deviation variable.**
 
+Descriptive activity names were added to the "activity" variable based on the information provided in the 'activty_labels.txt' file:
 
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
 
 
 
