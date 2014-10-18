@@ -230,4 +230,4 @@ fBodyBodyGyroJerkMag-std() | FrequencyBodyGyroscopeJerkMagnitude.std
 
 #### Tidy Data File
 
-A second, independent tidy data set was created with the average of each variable for each activity/subject combination.  
+A second, independent tidy data set called 'tidy_data.txt' was created, consisting of the average of each of the 66 time and frequency domain variables for each of the 180 activity/subject combinations. 
