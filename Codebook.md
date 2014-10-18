@@ -110,9 +110,23 @@ The following files are available for the train and test data. Their description
 
 For more information about this dataset contact: activityrecognition@smartlab.ws
 
-### Data Cleaning and Transformation
+#### License:
 
-A subset of 66 time and frequency domain variables were selected for further analysis. These variables consisted of the measurements on the mean and standard deviation for each measurement, as identified by "mean" or "std" in the variable name. **Note that variables with "meanFreq" in the name were excluded from this list, as these variables are the weighted average of the frequency components to obtain a mean frequency and do not have a corresponding standard deviation variable.**
+Use of this dataset in publications must be acknowledged by referencing the following publication [1] 
+
+[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
+
+This dataset is distributed AS-IS and no responsibility implied or explicit can be addressed to the authors or their institutions for its use or misuse. Any commercial use is prohibited.
+
+Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012.
+
+### Data Transformation
+
+#### Subset
+
+A subset of 66 time and frequency domain variables were selected for further analysis. These variables consist of the measurements on the mean and standard deviation for each measurement, as identified by "mean" or "std" in the variable name. **Note that variables with "meanFreq" in the name were excluded from this list, as these variables are the weighted average of the frequency components to obtain a mean frequency and do not have a corresponding standard deviation variable.**
+
+#### Activity Names
 
 Descriptive activity names were added to the "activity" variable based on the information provided in the 'activity_labels.txt' file:
 
@@ -124,6 +138,8 @@ Class Label  | Activity Name
 4 | SITTING
 5 | STANDING
 6 | LAYING
+
+#### Descriptive Variable Names
 
 The data set was labeled with descriptive variable names in order to make the variable names human readable. Specifically:
 
