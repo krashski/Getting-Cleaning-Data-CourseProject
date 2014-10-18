@@ -8,7 +8,7 @@ The project requires the following submissions:
 - a link to a Github repository with an R script called run_analysis.R for performing the analysis 
 - a code book called CodeBook.md that describes the variables, the data, and any transformations or work performed to clean up the data
 - a README.md file explains how all of the scripts work and how they are connected  
-- a tidy data set
+- a tidy data set (uploaded to Coursera)
 
 The R script called run_analysis.R does the following:
 
