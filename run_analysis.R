@@ -124,13 +124,6 @@ list <- colnames(df)
 list <- gsub("\\.\\.", "", list, perl = TRUE)
 
 # make the variable names human readable
-# replace "BodyBody" with "Body" in selected frequency domain variables
-# (this looks like an error in the original file)
-# substitute "Acceleration" for "Acc"
-# substitute "Gyroscope" for "Gyro" 
-# substitute "Magnitude" for "Mag" 
-# add "Time" to the beginning of variable starting with "t"
-# add "Frequency" to the beginning of variable starting with "f"
 oldval <- c("BodyBody", "Acc", "Gyro", "Mag", "^t", "^f")
 newval <- c("Body", "Acceleration", "Gyroscope", "Magnitude", "Time", "Frequency")
 
