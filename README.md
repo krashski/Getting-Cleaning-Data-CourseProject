@@ -32,6 +32,7 @@ The R script called run_analysis.R does the following:
 	- save the tidy data set to a text file called 'tidy_data.txt'
 	
 To read the tidy data set back into R:
+
 ```
 df <- read.table('tidy_data.txt', header = TRUE)
 ```
