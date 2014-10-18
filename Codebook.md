@@ -127,7 +127,7 @@ Class Label  | Activity Name
 
 The data set was labeled with descriptive variable names in order to make the variable names human readable. Specifically:
 
-- "BodyBody" was replaced with "Body" in selected frequency domain variables (this looks like an error in the original file)
+- "BodyBody" was replaced with "Body" for six frequency domain variables (this looks like an error in the original file)
 - "Acceleration" was substituted for "Acc"
 - "Gyroscope" was substituted for "Gyro" 
 - "Magnitude" was substituted for "Mag" 
