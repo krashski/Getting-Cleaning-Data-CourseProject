@@ -24,7 +24,11 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 - An identifier of the subject who carried out the experiment.
 
 ### The Raw Data
-#### The dataset includes the following files:
+
+The data files for the project are located at:
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+The dataset includes the following files:
 
 - 'README.txt'
 
@@ -56,9 +60,9 @@ The following files are available for the train and test data. Their description
 
 - Features are normalized and bounded within [-1,1].
 - Each feature vector is a row on the text file.
-- The data files for the project are located at:
-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 For more information about this dataset contact: activityrecognition@smartlab.ws
+
+### Data Cleaning and Processing
 
 
