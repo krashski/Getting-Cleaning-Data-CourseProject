@@ -116,7 +116,7 @@ A subset of 66 time and frequency domain variables were selected for further ana
 
 Descriptive activity names were added to the "activity" variable based on the information provided in the 'activity_labels.txt' file:
 
-Value  | Name
+Class Label  | Activity Name
 ------------- | -------------
 1 | WALKING
 2 | WALKING_UPSTAIRS
