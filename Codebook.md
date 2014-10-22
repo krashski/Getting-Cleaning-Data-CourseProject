@@ -146,7 +146,9 @@ Class Label  | Activity Name
 
 #### Descriptive Variable Names
 
-The data set was labeled with descriptive variable names in order to make the variable names human readable. Specifically:
+The data set was labeled with descriptive variable names in order to make the variable names human readable. 
+
+Specifically:
 
 - 'BodyBody' was replaced with 'Body' for six frequency domain variables (this looks like an error in the original file)
 - 'Acceleration' was substituted for 'Acc'
@@ -155,7 +157,9 @@ The data set was labeled with descriptive variable names in order to make the va
 - 'Time' was added to the beginning of variable starting with 't' to indicate time domain variables
 - 'Frequency' was added to the beginning of variable starting with 'f' to indicate frequency domain variables
 
-Characters that are not valid for variable names in R such as '-' and '()-' were replaced with a single period '.'.
+Characters that are not valid for variable names in R such as '-' and '()-' were replaced with a single dot '.'.
+
+With many variables having very similar names, capital letters and dots were retained in the new variable names to improve readability. For example, TimeBodyAcceleration.mean.X is much easier to read than timebodyaccelerationmeanx.
 
 The original and new variable names are as follows:
 

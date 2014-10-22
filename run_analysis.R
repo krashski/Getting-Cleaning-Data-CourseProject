@@ -122,10 +122,11 @@ list <- colnames(df)
 # that were added automatically by R in Step 1
 # because "-" and "()" are not valid characters for variable names
 list <- gsub("\\.\\.", "", list, perl = TRUE)
+list <- gsub("\\.", "", list, perl = TRUE)
 
 # make the variable names human readable
 oldval <- c("BodyBody", "Acc", "Gyro", "Mag", "^t", "^f")
-newval <- c("Body", "Acceleration", "Gyroscope", "Magnitude", "Time", "Frequency")
+newval <- c("body", "acceleration", "gyroscope", "magnitude", "time", "frequency")
 
 for (i in seq_along(oldval)) {
     list <- gsub(oldval[[i]], newval[[i]], list, perl = TRUE)
