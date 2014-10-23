@@ -159,7 +159,7 @@ Specifically:
 
 Characters that are not valid for variable names in R such as '-' and '()-' were replaced with a single dot '.'.
 
-With many variables having very similar names, capital letters and dots were retained in the new variable names to improve readability. For example, TimeBodyAcceleration.mean.X is much easier to read than timebodyaccelerationmeanx.
+Due to the length and complexity of the variable names, capital letters and dots were retained in the new variable names to improve readability. As an example, TimeBodyAcceleration.mean.X is much easier to read than timebodyaccelerationmeanx.
 
 The original and new variable names are as follows:
 
