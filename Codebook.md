@@ -150,87 +150,87 @@ The data set was labeled with descriptive variable names in order to make the va
 
 Specifically:
 
-- 'BodyBody' was replaced with 'Body' for six frequency domain variables (this looks like an error in the original file)
-- 'Acceleration' was substituted for 'Acc'
-- 'Gyroscope' was substituted for 'Gyro' 
-- 'Magnitude' was substituted for 'Mag' 
-- 'Time' was added to the beginning of variable starting with 't' to indicate time domain variables
-- 'Frequency' was added to the beginning of variable starting with 'f' to indicate frequency domain variables
+- 'BodyBody' was replaced with 'body' for six frequency domain variables (this looks like an error in the original file)
+- 'acceleration' was substituted for 'Acc'
+- 'gyroscope' was substituted for 'Gyro' 
+- 'magnitude' was substituted for 'Mag' 
+- 'time' was added to the beginning of variable starting with 't' to indicate time domain variables
+- 'frequency' was added to the beginning of variable starting with 'f' to indicate frequency domain variables
 
-Characters that are not valid for variable names in R such as '-' and '()-' were replaced with a single dot '.'.
+Characters that are not valid for variable names in R such as '-' and '()-' were removed.
 
-Due to the length and complexity of the variable names, capital letters and dots were retained in the new variable names to improve readability. As an example, note that TimeBodyAcceleration.mean.X is much easier to read than timebodyaccelerationmeanx.
+Variable names were converted to all lower case letters with words separated by dots, as per Google's R Style Guide (http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml#identifiers). 
 
-The original and new variable names are as follows:
+The recoded variable names are as follows:
 
 Original Variable Name | New Variable Name
 ---------------------- | -----------------
-tBodyAcc-mean()-X | TimeBodyAcceleration.mean.X
-tBodyAcc-mean()-Y | TimeBodyAcceleration.mean.Y
-tBodyAcc-mean()-Z | TimeBodyAcceleration.mean.Z
-tBodyAcc-std()-X | TimeBodyAcceleration.std.X
-tBodyAcc-std()-Y | TimeBodyAcceleration.std.Y
-tBodyAcc-std()-Z | TimeBodyAcceleration.std.Z
-tGravityAcc-mean()-X | TimeGravityAcceleration.mean.X
-tGravityAcc-mean()-Y | TimeGravityAcceleration.mean.Y
-tGravityAcc-mean()-Z | TimeGravityAcceleration.mean.Z
-tGravityAcc-std()-X | TimeGravityAcceleration.std.X
-tGravityAcc-std()-Y | TimeGravityAcceleration.std.Y
-tGravityAcc-std()-Z | TimeGravityAcceleration.std.Z
-tBodyAccJerk-mean()-X | TimeBodyAccelerationJerk.mean.X
-tBodyAccJerk-mean()-Y | TimeBodyAccelerationJerk.mean.Y
-tBodyAccJerk-mean()-Z | TimeBodyAccelerationJerk.mean.Z
-tBodyAccJerk-std()-X | TimeBodyAccelerationJerk.std.X
-tBodyAccJerk-std()-Y | TimeBodyAccelerationJerk.std.Y
-tBodyAccJerk-std()-Z | TimeBodyAccelerationJerk.std.Z
-tBodyGyro-mean()-X | TimeBodyGyroscope.mean.X
-tBodyGyro-mean()-Y | TimeBodyGyroscope.mean.Y
-tBodyGyro-mean()-Z | TimeBodyGyroscope.mean.Z
-tBodyGyro-std()-X | TimeBodyGyroscope.std.X
-tBodyGyro-std()-Y | TimeBodyGyroscope.std.Y
-tBodyGyro-std()-Z | TimeBodyGyroscope.std.Z
-tBodyGyroJerk-mean()-X | TimeBodyGyroscopeJerk.mean.X
-tBodyGyroJerk-mean()-Y | TimeBodyGyroscopeJerk.mean.Y
-tBodyGyroJerk-mean()-Z | TimeBodyGyroscopeJerk.mean.Z
-tBodyGyroJerk-std()-X | TimeBodyGyroscopeJerk.std.X
-tBodyGyroJerk-std()-Y | TimeBodyGyroscopeJerk.std.Y
-tBodyGyroJerk-std()-Z | TimeBodyGyroscopeJerk.std.Z
-tBodyAccMag-mean() | TimeBodyAccelerationMagnitude.mean
-tBodyAccMag-std() | TimeBodyAccelerationMagnitude.std
-tGravityAccMag-mean() | TimeGravityAccelerationMagnitude.mean
-tGravityAccMag-std() | TimeGravityAccelerationMagnitude.std
-tBodyAccJerkMag-mean() | TimeBodyAccelerationJerkMagnitude.mean
-tBodyAccJerkMag-std() | TimeBodyAccelerationJerkMagnitude.std
-tBodyGyroMag-mean() | TimeBodyGyroscopeMagnitude.mean
-tBodyGyroMag-std() | TimeBodyGyroscopeMagnitude.std
-tBodyGyroJerkMag-mean() | TimeBodyGyroscopeJerkMagnitude.mean
-tBodyGyroJerkMag-std() | TimeBodyGyroscopeJerkMagnitude.std
-fBodyAcc-mean()-X | FrequencyBodyAcceleration.mean.X
-fBodyAcc-mean()-Y | FrequencyBodyAcceleration.mean.Y
-fBodyAcc-mean()-Z | FrequencyBodyAcceleration.mean.Z
-fBodyAcc-std()-X | FrequencyBodyAcceleration.std.X
-fBodyAcc-std()-Y | FrequencyBodyAcceleration.std.Y
-fBodyAcc-std()-Z | FrequencyBodyAcceleration.std.Z
-fBodyAccJerk-mean()-X | FrequencyBodyAccelerationJerk.mean.X
-fBodyAccJerk-mean()-Y | FrequencyBodyAccelerationJerk.mean.Y
-fBodyAccJerk-mean()-Z | FrequencyBodyAccelerationJerk.mean.Z
-fBodyAccJerk-std()-X | FrequencyBodyAccelerationJerk.std.X
-fBodyAccJerk-std()-Y | FrequencyBodyAccelerationJerk.std.Y
-fBodyAccJerk-std()-Z | FrequencyBodyAccelerationJerk.std.Z
-fBodyGyro-mean()-X | FrequencyBodyGyroscope.mean.X
-fBodyGyro-mean()-Y | FrequencyBodyGyroscope.mean.Y
-fBodyGyro-mean()-Z | FrequencyBodyGyroscope.mean.Z
-fBodyGyro-std()-X | FrequencyBodyGyroscope.std.X
-fBodyGyro-std()-Y | FrequencyBodyGyroscope.std.Y
-fBodyGyro-std()-Z | FrequencyBodyGyroscope.std.Z
-fBodyAccMag-mean() | FrequencyBodyAccelerationMagnitude.mean
-fBodyAccMag-std() | FrequencyBodyAccelerationMagnitude.std
-fBodyBodyAccJerkMag-mean() | FrequencyBodyAccelerationJerkMagnitude.mean
-fBodyBodyAccJerkMag-std() | FrequencyBodyAccelerationJerkMagnitude.std
-fBodyBodyGyroMag-mean() | FrequencyBodyGyroscopeMagnitude.mean
-fBodyBodyGyroMag-std() | FrequencyBodyGyroscopeMagnitude.std
-fBodyBodyGyroJerkMag-mean() | FrequencyBodyGyroscopeJerkMagnitude.mean
-fBodyBodyGyroJerkMag-std() | FrequencyBodyGyroscopeJerkMagnitude.std
+tBodyAcc-mean()-X | time.body.acceleration.mean.x
+tBodyAcc-mean()-Y | time.body.acceleration.mean.y
+tBodyAcc-mean()-Z | time.body.acceleration.mean.z
+tBodyAcc-std()-X | time.body.acceleration.std.x
+tBodyAcc-std()-Y | time.body.acceleration.std.y
+tBodyAcc-std()-Z | time.body.acceleration.std.z
+tGravityAcc-mean()-X | time.gravity.acceleration.mean.x
+tGravityAcc-mean()-Y | time.gravity.acceleration.mean.y
+tGravityAcc-mean()-Z | time.gravity.acceleration.mean.z
+tGravityAcc-std()-X | time.gravity.acceleration.std.x
+tGravityAcc-std()-Y | time.gravity.acceleration.std.y
+tGravityAcc-std()-Z | time.gravity.acceleration.std.z
+tBodyAccJerk-mean()-X | time.body.acceleration.jerk.mean.x
+tBodyAccJerk-mean()-Y | time.body.acceleration.jerk.mean.y
+tBodyAccJerk-mean()-Z | time.body.acceleration.jerk.mean.z
+tBodyAccJerk-std()-X | time.body.acceleration.jerk.std.x
+tBodyAccJerk-std()-Y | time.body.acceleration.jerk.std.y
+tBodyAccJerk-std()-Z | time.body.acceleration.jerk.std.z
+tBodyGyro-mean()-X | time.body.gyroscope.mean.x
+tBodyGyro-mean()-Y | time.body.gyroscope.mean.y
+tBodyGyro-mean()-Z | time.body.gyroscope.mean.z
+tBodyGyro-std()-X | time.body.gyroscope.std.x
+tBodyGyro-std()-Y | time.body.gyroscope.std.y
+tBodyGyro-std()-Z | time.body.gyroscope.std.z
+tBodyGyroJerk-mean()-X | time.body.gyroscope.jerk.mean.x
+tBodyGyroJerk-mean()-Y | time.body.gyroscope.jerk.mean.y
+tBodyGyroJerk-mean()-Z | time.body.gyroscope.jerk.mean.z
+tBodyGyroJerk-std()-X | time.body.gyroscope.jerk.std.x
+tBodyGyroJerk-std()-Y | time.body.gyroscope.jerk.std.y
+tBodyGyroJerk-std()-Z | time.body.gyroscope.jerk.std.z
+tBodyAccMag-mean() | time.body.acceleration.magnitude.mean
+tBodyAccMag-std() | time.body.acceleration.magnitude.std
+tGravityAccMag-mean() | time.gravity.acceleration.magnitude.mean
+tGravityAccMag-std() | time.gravity.acceleration.magnitude.std
+tBodyAccJerkMag-mean() | time.body.acceleration.jerk.magnitude.mean
+tBodyAccJerkMag-std() | time.body.acceleration.jerk.magnitude.std
+tBodyGyroMag-mean() | time.body.gyroscope.magnitude.mean
+tBodyGyroMag-std() | time.body.gyroscope.magnitude.std
+tBodyGyroJerkMag-mean() | time.body.gyroscope.jerk.magnitude.mean
+tBodyGyroJerkMag-std() | time.body.gyroscope.jerk.magnitude.std
+fBodyAcc-mean()-X | frequency.body.acceleration.mean.x
+fBodyAcc-mean()-Y | frequency.body.acceleration.mean.y
+fBodyAcc-mean()-Z | frequency.body.acceleration.mean.z
+fBodyAcc-std()-X | frequency.body.acceleration.std.x
+fBodyAcc-std()-Y | frequency.body.acceleration.std.y
+fBodyAcc-std()-Z | frequency.body.acceleration.std.z
+fBodyAccJerk-mean()-X | frequency.body.acceleration.jerk.mean.x
+fBodyAccJerk-mean()-Y | frequency.body.acceleration.jerk.mean.y
+fBodyAccJerk-mean()-Z | frequency.body.acceleration.jerk.mean.z
+fBodyAccJerk-std()-X | frequency.body.acceleration.jerk.std.x
+fBodyAccJerk-std()-Y | frequency.body.acceleration.jerk.std.y
+fBodyAccJerk-std()-Z | frequency.body.acceleration.jerk.std.z
+fBodyGyro-mean()-X | frequency.body.gyroscope.mean.x
+fBodyGyro-mean()-Y | frequency.body.gyroscope.mean.y
+fBodyGyro-mean()-Z | frequency.body.gyroscope.mean.z
+fBodyGyro-std()-X | frequency.body.gyroscope.std.x
+fBodyGyro-std()-Y | frequency.body.gyroscope.std.y
+fBodyGyro-std()-Z | frequency.body.gyroscope.std.z
+fBodyAccMag-mean() | frequency.body.acceleration.magnitude.mean
+fBodyAccMag-std() | frequency.body.acceleration.magnitude.std
+fBodyBodyAccJerkMag-mean() | frequency.body.acceleration.jerk.magnitude.mean
+fBodyBodyAccJerkMag-std() | frequency.body.acceleration.jerk.magnitude.std
+fBodyBodyGyroMag-mean() | frequency.body.gyroscope.magnitude.mean
+fBodyBodyGyroMag-std() | frequency.body.gyroscope.magnitude.std
+fBodyBodyGyroJerkMag-mean() | frequency.body.gyroscope.jerk.magnitude.mean
+fBodyBodyGyroJerkMag-std() | frequency.body.gyroscope.jerk.magnitude.std
 
 #### Tidy Data Set
 

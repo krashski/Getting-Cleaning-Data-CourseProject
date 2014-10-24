@@ -51,15 +51,15 @@ test.d <- read.table(paste(path,'test/X_test.txt', sep = ''),
 
 # read subject files
 train.s <- read.table(paste(path,'train/subject_train.txt', sep = ''), 
-                      header = FALSE, col.names = "Subject")
+                      header = FALSE, col.names = "subject")
 test.s <- read.table(paste(path,'test/subject_test.txt', sep = ''), 
-                     header = FALSE, col.names = "Subject")
+                     header = FALSE, col.names = "subject")
 
 # read activity files
 train.a <- read.table(paste(path,'train/y_train.txt', sep = ''), 
-                      header = FALSE, col.names = "Activity")
+                      header = FALSE, col.names = "activity")
 test.a <- read.table(paste(path,'test/y_test.txt', sep = ''), 
-                     header = FALSE, col.names = "Activity")
+                     header = FALSE, col.names = "activity")
 
 # combine the training files
 train.data <- cbind(train.s, train.a, train.d)
@@ -82,7 +82,7 @@ rm(list="train.d","train.a","train.s","test.d","test.a","test.s", "train.data",
 # create a list of variables to keep
 # use grep to identify variables with "mean" or "std" in the name
 # include the "subject" and "activity" variables in the list
-keep <- c("Subject", "Activity", grep ("mean|std", names(df.all), value = TRUE))
+keep <- c("subject", "activity", grep ("mean|std", names(df.all), value = TRUE))
 
 # create a second list of variables with "meanFreq" in the name
 # we want to exclude these 
@@ -105,8 +105,8 @@ a.labels <- read.table(paste(path,'activity_labels.txt', sep = ''),
                      stringsAsFactors = FALSE)
 
 # create a factor to replace activity numbers with descriptive names
-df$Activity <- factor(df$Activity, levels = a.labels$number,
-                       labels = a.labels$name)
+df$activity <- factor(df$activity, levels = a.labels$number,
+                       labels = tolower(a.labels$name))
 
 # cleanup
 rm("a.labels")
@@ -122,15 +122,20 @@ list <- colnames(df)
 # that were added automatically by R in Step 1
 # because "-" and "()" are not valid characters for variable names
 list <- gsub("\\.\\.", "", list, perl = TRUE)
-list <- gsub("\\.", "", list, perl = TRUE)
 
 # make the variable names human readable
-oldval <- c("BodyBody", "Acc", "Gyro", "Mag", "^t", "^f")
-newval <- c("body", "acceleration", "gyroscope", "magnitude", "time", "frequency")
+# insert dots between words as required
+oldval <- c("BodyBody", "Body", "Acc", "Gyro", "Mag", "^t", "^f", "Gravity", "Jerk")
+newval <- c("body.", "body.", "acceleration.", "gyroscope.", "magnitude", 
+            "time.", "frequency.", "gravity.", "jerk.")
 
 for (i in seq_along(oldval)) {
     list <- gsub(oldval[[i]], newval[[i]], list, perl = TRUE)
 }
+
+# additional minor cleanup, convert all characters to lower case
+list <- gsub("\\.\\.", ".", list, perl = TRUE)
+list <- tolower(list)
 
 # apply the new variable names to the data file
 colnames(df) <- list
@@ -146,8 +151,8 @@ rm(list=c("oldval", "newval", "list", "i"))
 # create the tidy dataset using the 'reshape2' package to compute the mean for each variable
 # across all activity/subject combinations
 library(reshape2)
-df.tidy <- melt(df, id = c("Activity", "Subject"))
-df.tidy <- dcast(df.tidy, Activity + Subject ~ variable, mean)
+df.tidy <- melt(df, id = c("activity", "subject"))
+df.tidy <- dcast(df.tidy, activity + subject ~ variable, mean)
 
 # save the tidy data set to a text file
 write.table(df.tidy, "tidy_data.txt", row.name = FALSE)
