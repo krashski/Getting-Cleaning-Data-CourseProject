@@ -106,7 +106,7 @@ a.labels <- read.table(paste(path,'activity_labels.txt', sep = ''),
 
 # create a factor to replace activity numbers with descriptive names
 df$activity <- factor(df$activity, levels = a.labels$number,
-                       labels = tolower(a.labels$name))
+                       labels = a.labels$name)
 
 # cleanup
 rm("a.labels")
